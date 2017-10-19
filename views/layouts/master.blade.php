@@ -13,6 +13,7 @@
 
   <link rel="stylesheet" type="text/css" href="{{ asset('css/bulma.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ asset(mix('css/omni.css')) }}">
+  <script src="{{ asset('js/app.js') }}"></script>
   @yield('head')
 </head>
 <body>
@@ -62,5 +63,7 @@
       </div>
     </div>
   </footer>
+
+
 </body>
 </html>

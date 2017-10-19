@@ -22,7 +22,11 @@
   <section class="hero is-fullheight is-medium is-bold bg-rainbow">
     <div class="hero-body columns is-mobile is-multiline is-centered">
       <div class="column is-4">
-        <div class="card">
+
+        @include('components.alert')
+
+        <form class="card" method="post" action="{{ route('login') }}">
+          {{ csrf_field() }}
           <header class="card-header">
             <p class="card-header-title">
               Login
@@ -34,26 +38,33 @@
           <div class="card-content">
             <div class="field">
               <div class="control">
-                <input class="input" type="text" placeholder="Username">
+                <input class="input" type="text" placeholder="Email" name="email">
               </div>
             </div>
 
             <div class="field">
               <div class="control">
-                <input class="input" type="text" placeholder="Password">
+                <input class="input" type="password" placeholder="Password" name="password">
               </div>
             </div>
           </div>
           <footer class="card-footer">
-            <a href="#" class="card-footer-item">Register</a>
-            <a href="#" class="card-footer-item has-text-white" style="background: black">Login</a>
+            <a href="{{ route('register') }}" class="card-footer-item">Register</a>
+            <button class="card-footer-item button is-black is-fullheight" style="border:  transparent; height: auto" type="submit" id="btnlogin">Login</button>
           </footer>
-        </div>
+
+          <script>
+            $('#btnlogin').click(function(){
+
+              $(this).addClass('is-loading');
+            });
+          </script>
+        </form>
         <div class="is-divider" data-content="OR"></div>
         <div class="card">
           <header class="card-header">
             <p class="card-header-title">
-              log in with your existing social profile:
+              log in with your existing social profile
             </p>
           </header>
           <div class="card-content">
