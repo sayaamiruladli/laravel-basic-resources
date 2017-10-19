@@ -20,8 +20,8 @@
 @section('content')
 <body class="layout-default">
   <section class="hero is-fullheight is-medium is-bold bg-rainbow">
-    <div class="hero-body columns is-mobile is-multiline is-centered">
-      <div class="column is-4">
+    <div class="hero-body columns is-mobile is-multiline is-centered bg-overlay-image">
+      <div class="column is-4-desktop is-12-mobile">
 
         @include('components.alert')
 
@@ -29,7 +29,7 @@
           {{ csrf_field() }}
           <header class="card-header">
             <p class="card-header-title">
-              Join Us
+              Join Us 
             </p>
           </header>
           <div class="card-content">
@@ -38,7 +38,6 @@
               <div class="control">
                 <input class="input" type="text" name="name" placeholder="eg: amirul" value="{{ old('name') }}" required>
               </div>
-              <p class="help">Kindly put your nice name</p>
             </div>
 
             <div class="field">
@@ -46,7 +45,6 @@
               <div class="control">
                 <input class="input" type="email" name="email" placeholder="eg: amirul@gmail.com" value="{{ old('email') }}" required>
               </div>
-              <p class="help">Your email must be real existed email</p>
             </div>
 
             <div class="field">

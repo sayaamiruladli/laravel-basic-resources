@@ -20,7 +20,7 @@
 @section('content')
 <body class="layout-default">
   <section class="hero is-fullheight is-medium is-bold bg-rainbow">
-    <div class="hero-body columns is-mobile is-multiline is-centered">
+    <div class="hero-body columns is-mobile is-multiline is-centered bg-overlay-image-1">
       <div class="column is-4">
 
         @include('components.alert')
