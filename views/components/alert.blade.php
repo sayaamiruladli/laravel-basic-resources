@@ -20,9 +20,6 @@
 @endif
 
 <script>
-  
-  
-
   $(document).ready(function(){
       $('.delete').click(function(){
         $(this).parent().fadeOut();

@@ -1,77 +1,78 @@
 @extends('layouts.master')
 
+@section('head')
+<style>
+  .is-divider-vertical[data-content]:after, .is-divider[data-content]:after {
+      background: #fff;
+      color: #b5b5b5;
+      content: attr(data-content);
+      display: inline-block;
+      font-size: .75rem;
+      padding: .5rem .8rem;
+      -webkit-transform: translateY(-1.1rem);
+      transform: translateY(-1.1rem);
+      text-align: center;
+      border-radius: 20px;
+  }
+</style>
+@endsection
+
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Register</div>
+<body class="layout-default">
+  <section class="hero is-fullheight is-medium is-bold bg-rainbow">
+    <div class="hero-body columns is-mobile is-multiline is-centered">
+      <div class="column is-4">
 
-                <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="{{ route('register') }}">
-                        {{ csrf_field() }}
+        @include('components.alert')
 
-                        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                            <label for="name" class="col-md-4 control-label">Name</label>
-
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
-
-                                @if ($errors->has('name'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('name') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
-
-                                @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="col-md-4 control-label">Password</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password" required>
-
-                                @if ($errors->has('password'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="password-confirm" class="col-md-4 control-label">Confirm Password</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Register
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
+        <form class="card" method="post" action="{{ route('register') }}" id="form">
+          {{ csrf_field() }}
+          <header class="card-header">
+            <p class="card-header-title">
+              Join Us
+            </p>
+          </header>
+          <div class="card-content">
+            <div class="field">
+              <label class="label">Name</label>
+              <div class="control">
+                <input class="input" type="text" name="name" placeholder="eg: amirul" value="{{ old('name') }}" required>
+              </div>
+              <p class="help">Kindly put your nice name</p>
             </div>
-        </div>
+
+            <div class="field">
+              <label class="label">Email</label>
+              <div class="control">
+                <input class="input" type="email" name="email" placeholder="eg: amirul@gmail.com" value="{{ old('email') }}" required>
+              </div>
+              <p class="help">Your email must be real existed email</p>
+            </div>
+
+            <div class="field">
+              <label class="label">Password</label>
+              <div class="control">
+                <input class="input" type="password" name="password" placeholder="Password" required>
+              </div>
+              <div class="control" style="margin-top: 0.5em">
+                <input class="input" type="password" name="password_confirmation" placeholder="Password confirmation" required>
+              </div>
+            </div>
+          </div>
+          <footer class="card-footer">
+            <a href="{{ route('login') }}" class="card-footer-item">Login</a>
+            <button class="card-footer-item button is-black is-fullheight is-radiusless" style="border:  transparent; height: auto" type="submit" id="submit">Register</button>
+          </footer>
+        </form>
+        <script>
+            $('#form').submit(function(){
+
+              $('#submit').addClass('is-loading');
+            });
+        </script>
+      </div>
     </div>
-</div>
+
+  </section>
+</body>
 @endsection

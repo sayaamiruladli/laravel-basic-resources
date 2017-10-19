@@ -12,7 +12,7 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
   <link rel="stylesheet" type="text/css" href="{{ asset('css/bulma.css') }}">
-  <link rel="stylesheet" type="text/css" href="{{ asset(mix('css/omni.css')) }}">
+  <link rel="stylesheet" type="text/css" href="{{ asset(mix('css/main.css')) }}">
   <script src="{{ asset('js/app.js') }}"></script>
   @yield('head')
 </head>

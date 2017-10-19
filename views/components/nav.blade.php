@@ -26,7 +26,7 @@
   <div id="navMenuTransparentExample" class="navbar-menu">
     <div class="navbar-start">
       <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link  is-active" href="/documentation/overview/start/">
+        <a class="navbar-link is-active" href="/documentation/overview/start/">
           Docs
         </a>
         <div class="navbar-dropdown is-boxed has-text-black">
@@ -69,7 +69,7 @@
         </div>
       </div>
       <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link " href="https://bulma.io/blog/">
+        <a class="navbar-link is-active" href="https://bulma.io/blog/">
           Blog
         </a>
         <div id="blogDropdown" class="navbar-dropdown is-boxed has-text-black" data-style="width: 18rem;">
@@ -129,7 +129,7 @@
         </div>
       </div>
       <div class="navbar-item has-dropdown is-hoverable">
-        <div class="navbar-link">
+        <div class="navbar-link is-active">
           More
         </div>
         <div id="moreDropdown" class="navbar-dropdown is-boxed has-text-black">
@@ -174,12 +174,12 @@
           <i class="fa fa-lg fa-github"></i>
         </span>
       </a>
-      <a class="navbar-item is-hidden-desktop-only" href="https://twitter.com/jgthms" target="_blank" 
+      <a class="navbar-item is-hidden-desktop-only"
   data-social-network="Twitter"
   data-social-action="tweet"
   data-social-target="https://bulma.io"
   target="_blank"
-  href="https://twitter.com/intent/tweet?text=Bulma: a modern CSS framework based on Flexbox&hashtags=bulmaio&url=https://bulma.io&via=jgthms">
+  href="https://twitter.com/intent/tweet?text={{config('app.tweet')}}">
         <span class="icon" style="color: #55acee;">
           <i class="fa fa-lg fa-twitter"></i>
         </span>
@@ -187,7 +187,7 @@
       <div class="navbar-item">
         <div class="field is-grouped">
           <p class="control">
-            <a class="button is-primary" href="https://github.com/jgthms/bulma/releases/download/0.6.0/bulma-0.6.0.zip">
+            <a class="button is-primary" href="{{ route('login') }}">
               <span>Get Started</span>
             </a>
           </p>

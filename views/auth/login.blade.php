@@ -50,7 +50,7 @@
           </div>
           <footer class="card-footer">
             <a href="{{ route('register') }}" class="card-footer-item">Register</a>
-            <button class="card-footer-item button is-black is-fullheight" style="border:  transparent; height: auto" type="submit" id="btnlogin">Login</button>
+            <button class="card-footer-item button is-black is-fullheight is-radiusless" style="border:  transparent; height: auto" type="submit" id="btnlogin">Login</button>
           </footer>
 
           <script>
@@ -64,7 +64,7 @@
         <div class="card">
           <header class="card-header">
             <p class="card-header-title">
-              log in with your existing social profile
+              Log in with your existing social profile
             </p>
           </header>
           <div class="card-content">
@@ -84,15 +84,8 @@
           </div>
         </div>
 
-
       </div>
-
-      
-
-
     </div>
-
-
 
   </section>
 </body>
